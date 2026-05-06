@@ -3,13 +3,14 @@ import './Navbar.css'
 
 function Navbar() {
   const [activeTab, setActiveTab] = useState('home')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   const navItems = [
-    { id: 'home', label: 'Home', href: '#home' },
-    { id: 'properties', label: 'Properties', href: '#properties' },
-    { id: 'college', label: 'Properties By College', href: '#college' },
-    { id: 'community', label: 'Community', href: '#community' },
-    { id: 'serviced', label: 'Serviced Apartments', href: '#serviced' }
+    { id: 'home', label: 'Home', href: '/' },
+    { id: 'properties', label: 'Properties', href: '/#our-properties' },
+    { id: 'college', label: 'Properties By College', href: '/#college' },
+    { id: 'community', label: 'Community', href: '/#community' },
+    { id: 'serviced', label: 'Serviced Apartments', href: '/#serviced' }
   ]
 
   return (
@@ -31,15 +32,28 @@ function Navbar() {
 
         <nav className="navbar">
           <div className="navbar-container">
-            <div className="navbar-logo">
+            <a className="navbar-logo" href="/">
               <img 
                 src="https://www.unionliving.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogoblack.c49881fd.png&w=1920&q=75&dpl=dpl_FgGnpdVbYZDhmnZKSLQBzRcUtNTd"
                 alt="Union Living Logo"
                 className="logo-img"
               />
-            </div>
+            </a>
             
-            <ul className="nav-menu">
+            <button
+              className={`hamburger-btn ${menuOpen ? 'open' : ''}`}
+              type="button"
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={menuOpen}
+              aria-controls="primary-navigation"
+              onClick={() => setMenuOpen((current) => !current)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <ul className={`nav-menu ${menuOpen ? 'open' : ''}`} id="primary-navigation">
               {navItems.map((item) => (
                 <li 
                   key={item.id}
@@ -48,21 +62,27 @@ function Navbar() {
                   <a 
                     href={item.href} 
                     className={`nav-link ${activeTab === item.id ? 'active' : ''}`}
-                    onClick={() => setActiveTab(item.id)}
+                    onClick={() => {
+                      setActiveTab(item.id)
+                      setMenuOpen(false)
+                    }}
                   >
                     {item.label}
                   </a>
                 </li>
               ))}
+
+              <li className="mobile-book-item">
+                <button className="book-btn mobile-book-btn">BOOK NOW</button>
+              </li>
             </ul>
 
-            <button className="book-btn">BOOK NOW</button>
+            <button className="book-btn desktop-book-btn">BOOK NOW</button>
           </div>
         </nav>
       </div>
 
-      {/* Spacer to push content below the fixed navbar */}
-      <div className="navbar-spacer"></div>
+
     </>
   )
 }

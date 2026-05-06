@@ -17,12 +17,6 @@ function Hero() {
       </video>
 
       <div className="hero-overlay"></div>
-      
-      <div className="hero-content">
-        <h1 className="hero-title">
-          Find Your Perfect Home in <span className="highlight">Top Cities</span>
-        </h1>
-      </div>
     </section>
   )
 }
