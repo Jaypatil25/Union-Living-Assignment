@@ -45,14 +45,14 @@ function Footer() {
           <p className="footer-copy">2026 Union Living. All right reserved</p>
 
           <div className="footer-socials" aria-label="Social links">
-            <a href="https://www.instagram.com/unionliving.in/" aria-label="Instagram">
+            <a href="https://www.instagram.com/union_living/" aria-label="Instagram">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
                 <path d="M17.5 6.5h.01" />
               </svg>
             </a>
-            <a href="https://www.youtube.com/" aria-label="YouTube">
+            <a href="https://www.youtube.com/@unioncoliving" aria-label="YouTube">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M22 12s0-3.2-.4-4.7c-.2-.8-.8-1.4-1.6-1.6C18.5 5.3 12 5.3 12 5.3s-6.5 0-8 .4c-.8.2-1.4.8-1.6 1.6C2 8.8 2 12 2 12s0 3.2.4 4.7c.2.8.8 1.4 1.6 1.6 1.5.4 8 .4 8 .4s6.5 0 8-.4c.8-.2 1.4-.8 1.6-1.6.4-1.5.4-4.7.4-4.7z" />
                 <path d="m10 9 5 3-5 3z" />
