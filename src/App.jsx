@@ -1,24 +1,20 @@
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import OurProperties from './components/OurProperties'
-import CityProperties from './components/CityProperties'
 import Footer from './components/Footer'
+import CityPropertiesPage from './pages/CityPropertiesPage'
+import HomePage from './pages/HomePage'
+import { getRoute } from './routes'
 import './App.css'
 
 function App() {
-  const cityMatch = window.location.pathname.match(/^\/properties\/([^/]+)$/)
+  const route = getRoute(window.location.pathname)
 
   return (
     <>
       <Navbar />
-      {cityMatch ? (
-        <CityProperties citySlug={cityMatch[1]} />
+      {route.name === 'city-properties' ? (
+        <CityPropertiesPage citySlug={route.citySlug} />
       ) : (
-        <>
-          <Hero />
-          <div className="navbar-spacer"></div>
-          <OurProperties />
-        </>
+        <HomePage />
       )}
       <Footer />
     </>
