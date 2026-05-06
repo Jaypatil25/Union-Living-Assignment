@@ -14,7 +14,7 @@
   background: #f6f5f3;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
   display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(180px, 1.25fr) repeat(3, minmax(0, 1fr));
   gap: 44px;
   color: #050505;
 }
@@ -64,11 +64,13 @@
 .footer-contact a {
   display: block;
   width: fit-content;
+  max-width: 100%;
   color: #030303;
   text-decoration: none;
   font-size: 18px;
   line-height: 1.35;
   margin-bottom: 4px;
+  overflow-wrap: anywhere;
 }
 
 .footer-column a:hover,
@@ -137,6 +139,15 @@
     padding: 42px 40px;
   }
 
+  .footer-column h2 {
+    font-size: 22px;
+  }
+
+  .footer-column a,
+  .footer-contact a {
+    font-size: 17px;
+  }
+
   .footer-copy {
     grid-column: 1;
     justify-self: start;
@@ -151,14 +162,14 @@
 
 @media (max-width: 700px) {
   .site-footer {
-    padding: 24px 16px;
+    padding: 22px 14px;
   }
 
   .footer-shell {
     grid-template-columns: 1fr;
     min-height: 0;
-    padding: 36px 24px;
-    gap: 24px;
+    padding: 30px 22px;
+    gap: 22px;
   }
 
   .footer-column,
@@ -167,26 +178,26 @@
   }
 
   .footer-logo {
-    width: 150px;
+    width: 132px;
   }
 
   .footer-brand p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .footer-book-btn {
-    min-width: 154px;
-    height: 52px;
-    font-size: 18px;
+    min-width: 140px;
+    height: 48px;
+    font-size: 16px;
   }
 
   .footer-column h2 {
-    font-size: 24px;
+    font-size: 21px;
   }
 
   .footer-column a,
   .footer-contact a {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .footer-copy {
@@ -199,5 +210,25 @@
   .footer-socials {
     grid-column: 1;
     justify-self: start;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-footer {
+    padding: 18px 10px;
+  }
+
+  .footer-shell {
+    padding: 26px 18px;
+    border-radius: 10px;
+  }
+
+  .footer-contact h3 {
+    font-size: 16px;
+  }
+
+  .footer-column a,
+  .footer-contact a {
+    font-size: 16px;
   }
 }

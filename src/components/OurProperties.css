@@ -26,7 +26,7 @@
 }
 
 .properties-title {
-  font-size: 40px;
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
   color: #1a1a2e;
   margin: 0 0 14px;
@@ -39,6 +39,7 @@
   color: #888;
   font-weight: 400;
   margin: 0;
+  line-height: 1.5;
 }
 
 /* Slider */
@@ -75,7 +76,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 0 0 calc((100% - 84px) / 4);
-  min-width: 280px;
+  min-width: 270px;
   scroll-snap-align: start;
 }
 
@@ -229,6 +230,7 @@
   gap: 16px;
   padding-top: 14px;
   border-top: 1px solid #f0f0f0;
+  flex-wrap: wrap;
 }
 
 .stat {
@@ -278,8 +280,8 @@
   }
 
   .city-card {
-    flex-basis: 86%;
-    min-width: 260px;
+    flex-basis: 88%;
+    min-width: 235px;
   }
 
   .properties-title {
@@ -304,5 +306,38 @@
 
   .city-image-wrapper {
     height: 200px;
+  }
+
+  .city-info {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .our-properties {
+    padding: 42px 12px;
+  }
+
+  .city-card {
+    flex-basis: 92%;
+    min-width: 220px;
+  }
+
+  .city-icon-circle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .city-name {
+    font-size: 19px;
+  }
+
+  .city-coming-overlay {
+    padding: 16px;
+  }
+
+  .city-coming-overlay span {
+    font-size: 12px;
+    letter-spacing: 1.4px;
   }
 }

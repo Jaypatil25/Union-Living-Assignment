@@ -78,6 +78,7 @@
   padding: 0;
   flex: 1;
   justify-content: center;
+  min-width: 0;
 }
 
 .nav-item {
@@ -94,6 +95,7 @@
   position: relative;
   padding-bottom: 8px;
   border-bottom: 3px solid transparent;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -281,5 +283,18 @@
   .hamburger-btn {
     width: 40px;
     height: 40px;
+  }
+
+  .nav-menu {
+    left: 10px;
+    right: 10px;
+  }
+
+  .nav-link {
+    white-space: normal;
+  }
+
+  .navbar-spacer {
+    height: 96px;
   }
 }

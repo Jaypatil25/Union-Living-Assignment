@@ -1,14 +1,12 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  min-height: max(600px, 100svh);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  background-attachment: fixed;
 }
 
 .hero-video {
@@ -60,7 +58,7 @@
 
 @media (max-width: 1024px) {
   .hero {
-    height: 100vh;
+    min-height: 720px;
   }
 
   .hero-title {
@@ -70,7 +68,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    height: 100vh;
+    min-height: 640px;
   }
 
   .hero-title {
@@ -80,7 +78,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    height: 100vh;
+    min-height: 560px;
   }
 
   .hero-title {
